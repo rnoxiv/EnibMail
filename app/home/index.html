@@ -1,0 +1,26 @@
+﻿<h1>Hi {{vm.user.firstName}}!!</h1>
+<div class="row">
+	<div class="col-sm-12 col-lg-12">
+			<div class="alert alert-info spacer">5 last mails received! You have {{numUnreadMails}} unread emails in your inbox!</div>
+			<table class="table table-striped table-hover spacer">
+				<thead>
+					<tr>
+						<th>From</th>
+						<th>To</th>
+						<th>Subject</th>
+						<th>Date</th>
+						<th>Statut</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="email in inbox | orderBy : email.date" id="email.id" class="clickable" ng-click="" style="background-color:#FFFFFF">
+						<td>{{email.from}}</td>
+						<td>{{email.to}}</td>
+						<td>{{email.subject}}</td>
+						<td>{{email.date | date:'medium' }}</td>
+						<td>{{email.statut}}</td>
+					</tr>
+				</tbody>
+			</table>
+	</div>
+</div>
